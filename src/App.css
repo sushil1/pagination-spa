@@ -1,0 +1,116 @@
+.container {
+  margin: 20px;
+}
+
+.data-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu {
+  flex: 0.4;
+  justify-content: flex-start;
+  align-items: space-around;
+}
+
+.details {
+  margin: 2px;
+  flex: 0.59;
+  border: 2px solid black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  flex: 0.9;
+  padding: 20px;
+  border: 2px solid black;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.username {
+  flex: 0.9;
+}
+.score {
+  flex: 0.1;
+}
+
+.meta-user {
+  display: flex;
+  height: 60px;
+  margin-top: 10px;
+}
+.meta-username {
+  flex: 0.8;
+  font-size: 32px;
+  align-self: flex-end;
+  margin-left: 10px;
+}
+.meta-score {
+  flex: 0.15;
+  font-size: 55px;
+  align-self: baseline;
+  justify-content: flex-end;
+}
+.meta-description {
+  padding: 15px;
+}
+
+.pagination-container {
+  display: flex;
+  height: 40px;
+  justify-content: flex-start;
+  align-items: space-between;
+  margin-top: 10px;
+}
+
+.pagination {
+  flex: 0.39;
+  margin-left: 2px;
+  align-items: center;
+}
+
+.page-number-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.page-number {
+  display: flex;
+  padding: 1px;
+  flex-grow: wrap;
+  cursor: pointer;
+  color: blue;
+}
+.active {
+  color: red;
+}
+a {
+  font-size: 14px;
+}
+.disable {
+  pointer-events: none;
+  cursor: default;
+  color: black;
+}
+
+@media (max-width: 590px) {
+  .pagination {
+    flex: 1;
+    margin-left: 2px;
+    align-items: center;
+  }
+}
