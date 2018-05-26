@@ -5,9 +5,10 @@ import Pagination from './Pagination';
 
 import './App.css';
 
-const resonateUrl = `https://resonatetest.azurewebsites.net/data`;
+const postsUrl = `https://jsonplaceholder.typicode.com/posts`;
+
 //bypassing 'no cors allowed' by the resource server
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+//const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -20,7 +21,7 @@ class App extends Component {
     selected: null
   };
 
-  fetchInitialData = () => axios.get(proxyUrl + resonateUrl);
+  fetchInitialData = () => axios.get(postsUrl);
 
   componentDidMount() {
     this.setState({ isLoading: true });
@@ -121,8 +122,8 @@ class App extends Component {
             key={item.id}
             onClick={() => this.itemSelected(item)}
           >
-            <span className="username">{item.user}</span>{' '}
-            <span className="score">{item.score}</span>
+            <span className="username">{item.title}</span>{' '}
+            <span className="score">{item.id}</span>
           </li>
         ))
       : null;
@@ -138,11 +139,11 @@ class App extends Component {
               {selected != null ? (
                 <div>
                   <div className="meta-user">
-                    <div className="meta-username">{selected.user}</div>
-                    <div className="meta-score">{selected.score}</div>
+                    <div className="meta-username">{selected.title}</div>
+                    <div className="meta-score">{selected.id}</div>
                   </div>
                   <div className="meta-description">
-                    <p>{selected.verbatim}</p>
+                    <p>{selected.body}</p>
                   </div>
                 </div>
               ) : (
